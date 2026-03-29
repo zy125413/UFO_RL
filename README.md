@@ -17,23 +17,23 @@ UFO-RL is a lightweight and scalable framework for efficient RL data selection i
 
 For each candidate sample \(x_i\), we compute the model confidence as the average log-probability of the target sequence:
 
-\[
+$$
 \mathrm{Conf}(x_i)=\frac{1}{T}\sum_{t=1}^{T}\log P(y_t \mid x_i, y_{<t})
-\]
+$$
 
 We then define:
 
-\[
+$$
 s_i=\exp(\mathrm{Conf}(x_i))
-\]
+$$
 
 Let \(\mu\) be the mean of \(s_i\) over the candidate dataset. The final fuzziness score is:
 
-\[
+$$
 \mathrm{Score}(s_i)=1-(s_i-\mu)^2
-\]
+$$
 
-Samples with higher scores are closer to the model's current uncertainty center and are selected for RL training. In the paper, the top **10%** samples ranked by this score are used as the final training subset.
+Samples with higher scores are closer to the model's current uncertainty center and are selected for RL training. In the paper, the top 10% samples ranked by this score are used as the final training subset.
 
 ## Repository Structure
 
