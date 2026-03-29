@@ -19,7 +19,7 @@ For each candidate sample \(x_i\), we compute the model confidence as the averag
 
 
 $$
-Conf(x_i)=\frac{1}{T}\sum_{t=1}^{T}\log P(y_t \mid x_i, y_{<t})
+\mathrm{Conf}(x_i) = \frac{1}{T}\sum_{t=1}^{T}\log P(y_t \mid x_i, y_{<t})
 $$
 
 We then define:
